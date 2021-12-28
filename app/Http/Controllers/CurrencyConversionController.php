@@ -7,8 +7,33 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Services\CurrencyConversionService\BankAbstractFactory;
 
+/**
+ * @group  Currency Conversion
+ */
 class CurrencyConversionController extends Controller
 {
+    /**
+     * Currency Conversion
+     *
+     * @queryParam origin_currency required The origin_currency of origin currency enum('TWD', 'USD', 'JPY'). Example: TWD
+     * @queryParam target_currency required The target_currency of target currency enum('TWD', 'USD', 'JPY'). Example: USD
+     * @queryParam amount required The amount of conversion amount. Example: 500.2
+     *
+     * @response  400 {
+     *  "message": {
+     *       "origin_currency": [
+     *          "The origin currency field is required."
+     *       ],
+     *       "target_currency": [
+     *          "The target currency field is required."
+     *       ],
+     *       "amount": [
+     *          "The amount field is required."
+     *       ]
+     *  }
+     * }
+     *
+     */
     public function index(Request $request)
     {
         $validator = Validator::make($request->all(), [

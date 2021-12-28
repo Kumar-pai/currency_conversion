@@ -1,0 +1,64 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Laravel API",
+        "_postman_id": "dc9883ff-9afa-4a8b-9419-448ea7ef3bb5",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Currency Conversion",
+            "description": "",
+            "item": [
+                {
+                    "name": "Currency Conversion",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/currency-conversion",
+                            "query": [
+                                {
+                                    "key": "origin_currency",
+                                    "value": "TWD",
+                                    "description": "The origin_currency of origin currency enum('TWD', 'USD', 'JPY').",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "target_currency",
+                                    "value": "USD",
+                                    "description": "The target_currency of target currency enum('TWD', 'USD', 'JPY').",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "amount",
+                                    "value": "500.2",
+                                    "description": "The amount of conversion amount.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}
